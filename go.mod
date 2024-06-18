@@ -1,1 +1,1 @@
-module ipValidator
+module github.com/aydinnyunus/ipValidator

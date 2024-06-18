@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"ipValidator/ipValidator"
+	"github.com/aydinnyunus/ipValidator/ipValidator"
 )
 
 func main() {

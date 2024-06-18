@@ -103,3 +103,30 @@ func main() {
 ## License
 
 `ipValidator` is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Contact
+
+[<img target="_blank" src="https://img.icons8.com/bubbles/100/000000/linkedin.png" title="LinkedIn">](https://linkedin.com/in/yunus-ayd%C4%B1n-b9b01a18a/) [<img target="_blank" src="https://img.icons8.com/bubbles/100/000000/github.png" title="Github">](https://github.com/aydinnyunus/) [<img target="_blank" src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" title="Instagram">](https://instagram.com/aydinyunus_/) [<img target="_blank" src="https://img.icons8.com/bubbles/100/000000/twitter-squared.png" title="LinkedIn">](https://twitter.com/aydinnyunuss)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/usestrix/cli.svg?style=for-the-badge
+
+[contributors-url]: https://github.com/aydinnyunus/ipValidator/graphs/contributors
+
+
+[forks-url]: https://github.com/aydinnyunus/ipValidator/network/members
+
+
+[stars-url]: https://github.com/aydinnyunus/ipValidator/stargazers
+
+
+[issues-url]: https://github.com/aydinnyunus/ipValidator/issues
+
+
+[license-url]: https://github.com/aydinnyunus/ipValidator/blob/master/LICENSE.txt
+
+[linkedin-url]: https://linkedin.com/in/aydinnyunus
+
+[latest-release]: https://github.com/aydinnyunus/ipValidator/releases

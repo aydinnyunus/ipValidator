@@ -15,7 +15,7 @@
 To install `ipValidator`, use `go get`:
 
 ```bash
-go get github.com/aydinnyunus/ipValidator
+go get github.com/aydinnyunus/ipValidator/ipValidator
 ```
 
 ## Usage
@@ -29,12 +29,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/aydinnyunus/ipValidator" // Adjust the import path
+	"github.com/aydinnyunus/ipValidator/ipValidator"
 )
 
 func main() {
-	// Create a filter with default settings (all flags set to true)
-	defaultFilter := ipValidator.NewDefaultFilter()
+	// Create a filter with default settings (all flags set to false)
+	defaultFilter := ipValidator.NewDefaultValidator()
 
 	testIPs := []string{
 		"127.0.0.1",
@@ -44,15 +44,21 @@ func main() {
 		"224.0.0.1",
 		"8.8.8.8",
 		"2001:db8::",
+		"[::1]",
+		"216.58.212.14",
 	}
 
+	fmt.Println("Default Validator :")
 	for _, ipStr := range testIPs {
-		if defaultFilter.IsReserved(ipStr) {
-			fmt.Printf("%s is a reserved IP address\n", ipStr)
+		if defaultFilter.IsReserved(ipStr) == 1 {
+			fmt.Printf("\t- %s is a reserved IP address\n", ipStr)
+		} else if defaultFilter.IsReserved(ipStr) == -1 {
+			fmt.Printf("\t- %s is not a valid IP address\n", ipStr)
 		} else {
-			fmt.Printf("%s is not a reserved IP address\n", ipStr)
+			fmt.Printf("\t- %s is not a reserved IP address\n", ipStr)
 		}
 	}
+
 }
 ```
 
@@ -65,17 +71,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/aydinnyunus/ipValidator" // Adjust the import path
+	"github.com/aydinnyunus/ipValidator/ipValidator" // Adjust the import path
 )
 
 func main() {
 	// Create a custom filter with specific flags
-	customFilter := ipValidator.NewFilter(
-		false, // Disallow loopback addresses
-		false, // Disallow link-local addresses
-		false, // Disallow multicast addresses
-		false, // Disallow private addresses
-	)
+	customFilter := ipValidator.NewValidator(true, false, true, false, false)
 
 	testIPs := []string{
 		"127.0.0.1",
@@ -88,10 +89,12 @@ func main() {
 	}
 
 	for _, ipStr := range testIPs {
-		if customFilter.IsReserved(ipStr) {
-			fmt.Printf("%s is a reserved IP address\n", ipStr)
+		if customFilter.IsReserved(ipStr) == 1 {
+			fmt.Printf("\t- %s is a reserved IP address\n", ipStr)
+		} else if customFilter.IsReserved(ipStr) == -1 {
+			fmt.Printf("\t- %s is not a valid IP address\n", ipStr)
 		} else {
-			fmt.Printf("%s is not a reserved IP address\n", ipStr)
+			fmt.Printf("\t- %s is not a reserved IP address\n", ipStr)
 		}
 	}
 }

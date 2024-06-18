@@ -71,7 +71,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/aydinnyunus/ipValidator/ipValidator" // Adjust the import path
+	"github.com/aydinnyunus/ipValidator/ipValidator"
 )
 
 func main() {
